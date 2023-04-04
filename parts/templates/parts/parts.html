@@ -1,0 +1,37 @@
+{% extends 'parts/main.html' %}
+
+{% block content %}
+
+    <br>
+
+ 
+    <div class="row">
+        <div class="col-md">
+            <div class="card card-body">
+                <h5>パーツ在庫</h5>
+            </div>
+        
+            <div class="card card-body">
+                <table class="table">
+                    <tr>
+                        <th>カテゴリ</th>
+                        <th>パーツ名</th>
+                        <th>基準個数</th>
+                        <th>消費個数</th>
+                    </tr>
+
+                    {% for i in parts %}
+                        <tr>
+                            <td>{{i.category}}</td>
+                            <td>{{i.name}}</td>
+                            <td>{{i.quantity}}</td>
+
+                        </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

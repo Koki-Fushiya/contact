@@ -1,0 +1,31 @@
+{% extends 'parts/main.html' %}
+{% block content %}
+{% include 'parts/status.html' %}
+
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <table class="table table-sm">
+                <tr>
+                    <th>カテゴリ</th>
+                    <th>パーツ名</th>
+                    <th>消耗日</th>
+                    <th>ステータス</th> 
+
+                </tr>
+
+                {% for order in orders %}
+                    <tr>
+                        <td>{{order.parts.category}}</td>
+                        <td>{{order.parts}}</td>
+                        <td>{{order.date_created}}</td>
+                        <td>{{order.status}}</td>
+
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

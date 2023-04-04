@@ -1,0 +1,108 @@
+
+{% extends 'parts/main.html' %}
+
+
+
+{% block content %}
+
+    <hr>
+
+     <section id="services" class="services section-bg">
+        <a class="btn btn-warning" href="{% url 'home' %}">&#8592;ホームに戻る</a>
+
+        <div class="container" data-aos="fade-up">
+          <div class="section-header">
+            <h2>カテゴリからトラブルを解決する</h2>
+            <p>下記のカテゴリからお困りのトラブル解決法を探してください</p>
+          </div>
+  
+          <div class="row gy-4">
+            {% for i in troubles %}    
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-item  position-relative">
+                <div class="icon">
+                  <i class="fa-solid fa-mountain-city"></i>
+                </div>
+                <h3>{{i.main_category}}</h3>
+                <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis
+                  tempore et consequatur.</p>
+                  <div class="dropdown dropend">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                      {{i.main_category}}カテゴリ 
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                      <li><a class="dropdown-item active" href="{% url 'troubleDetail' %}">{{i.sub_category}}</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Separated link</a></li>
+                    </ul>
+                  </div>
+              </div>
+            </div>
+            {% endfor %}
+
+
+
+  
+            <!-- <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="service-item position-relative">
+                <div class="icon">
+                  <i class="fa-solid fa-arrow-up-from-ground-water"></i>
+                </div>
+                <h3>ロボット</h3>
+                <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut
+                  nesciunt dolorem.</p>
+                  <div class="dropdown dropend">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                      ロボットカテゴリ
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                      <li><a class="dropdown-item active" href="#">アーム</a></li>
+                      <li><a class="dropdown-item" href="#">abc</a></li>
+                      <li><a class="dropdown-item" href="#">def</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Separated link</a></li>
+                    </ul>
+                  </div>
+              </div>
+            </div> -->
+  
+              <!-- <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-item position-relative">
+                  <div class="icon">
+                    <i class="fa-solid fa-compass-drafting"></i>
+                  </div>
+                  <h3>コンベア</h3>
+                  <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci
+                    eos earum corrupti.</p>
+                    <div class="dropdown dropend">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                        コンベアカテゴリ
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                        <li><a class="dropdown-item active" href="#">トレー充填</a></li>
+                        <li><a class="dropdown-item" href="#">トレー搬送</a></li>
+                        <li><a class="dropdown-item" href="#">トレー搬出</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Separated link</a></li>
+                      </ul>
+                    </div>
+                </div>
+              </div> -->
+  
+              <!-- <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-item position-relative">
+                  <div class="icon">
+                    <i class="fa-solid fa-trowel-bricks"></i>
+                  </div>
+                  <h3>その他</h3>
+                  <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident
+                    adipisci neque.</p>
+                  <a href="service-details.html" class="btn btn-primary">その他<i
+                      class="bi bi-arrow-right"></i></a>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </section>
+{% endblock %}
