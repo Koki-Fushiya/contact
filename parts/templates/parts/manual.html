@@ -10,13 +10,13 @@
     <div class="container">
         <div class="row align-items-center">
           {% for i in manuals %}
-          <div class="col">
+          <div class="col-lg-4 col-md-6">
             <div class="card" style="width: 21rem;">
                 <div class="card-body">
                   <h5 class="card-title">{{i.name}}</h5>
                   <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
                   <p class="card-text">以下のリンクからダウンロードできます</p>
-                  <a href="{{i.file.url}}" download="{{i.file}}" class="card-link">PDF link</a> 
+                  <a href="{{i.file.url}}" download="{{i.file}}" class="card-link">{{i.name}} PDF link</a> 
                 </div>
             </div>
           </div>

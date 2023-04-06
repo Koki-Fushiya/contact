@@ -16,7 +16,8 @@
                     <tr>
                         <th>カテゴリ</th>
                         <th>パーツ名</th>
-                        <th>基準個数</th>
+                        <th>推奨数</th>
+                        <th>現在の数</th>
                         <th>消費個数</th>
                     </tr>
 
@@ -25,13 +26,25 @@
                             <td>{{i.category}}</td>
                             <td>{{i.name}}</td>
                             <td>{{i.quantity}}</td>
-
+                            <td>{number}右の消費個数を選択し、送信ボタンを押すとnumberに反映される    </td>
+                            <td>
+                                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                <option selected></option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                </select>
+                            </td>
                         </tr>
                     {% endfor %}
 
                 </table>
             </div>
         </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-primary me-md-2" type="button">送信</button>
+        </div>
     </div>
+   
 
 {% endblock %}
